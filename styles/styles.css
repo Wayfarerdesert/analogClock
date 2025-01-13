@@ -134,6 +134,24 @@ body {
     position: relative;
 }
 
+.clock .markers {
+    position: absolute;
+    width: 3%;
+    height: 1%;
+    background-color: black;
+    bottom: 50%;
+    left: 0;
+    z-index: 2;
+    /* transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg)); */
+}
+
+.clock .marker3,
+.clock .marker6,
+.clock .marker9,
+.clock .marker12 {
+    height: 2%;
+}
+
 .clock .number {
     --rotation: 0;
     position: absolute;
@@ -161,8 +179,6 @@ body {
 
 .clock .number3 {
     --rotation: 90deg;
-    font-size: 2em;
-    padding: .2em;
 }
 
 .clock .number4 {
@@ -175,8 +191,6 @@ body {
 
 .clock .number6 {
     --rotation: 180deg;
-    font-size: 2em;
-    padding: .2em;
 }
 
 .clock .number7 {
@@ -189,8 +203,6 @@ body {
 
 .clock .number9 {
     --rotation: 270deg;
-    font-size: 2em;
-    padding: .2em;
 }
 
 .clock .number10 {
@@ -201,7 +213,10 @@ body {
     --rotation: 330deg;
 }
 
-.clock .number12 {
+.clock .number12,
+.clock .number3,
+.clock .number6,
+.clock .number9 {
     font-size: 2em;
     padding: .2em;
 }

@@ -9,6 +9,9 @@ function numbers() {
     const numbers = document.querySelector('.numberWrapper');
 
     num.forEach((num) => {
+        const marker = document.createElement('div');
+        marker.classList.add('markers', 'marker' + num);
+
         const div = document.createElement('div');
         div.classList.add('number', 'number' + num);
 
@@ -17,6 +20,7 @@ function numbers() {
         span.innerText = num;
 
         div.appendChild(span);
+        div.appendChild(marker);
         numbers.appendChild(div);
     });
 }
