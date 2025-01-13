@@ -35,6 +35,11 @@ body {
     transform: rotate(var(--rotation));
 }
 
+.clock .number span {
+    display: inline-block;
+    transform: rotate(calc(-1 * var(--rotation)));
+}
+
 .clock .number1 {
     --rotation: 30deg;
 }
@@ -45,6 +50,8 @@ body {
 
 .clock .number3 {
     --rotation: 90deg;
+    font-size: 2em;
+    padding: .2em;
 }
 
 .clock .number4 {
@@ -57,6 +64,8 @@ body {
 
 .clock .number6 {
     --rotation: 180deg;
+    font-size: 2em;
+    padding: .2em;
 }
 
 .clock .number7 {
@@ -69,6 +78,8 @@ body {
 
 .clock .number9 {
     --rotation: 270deg;
+    font-size: 2em;
+    padding: .2em;
 }
 
 .clock .number10 {
@@ -77,6 +88,11 @@ body {
 
 .clock .number11 {
     --rotation: 330deg;
+}
+
+.clock .number12 {
+    font-size: 2em;
+    padding: .2em;
 }
 
 .clock .hand {
@@ -99,6 +115,7 @@ body {
     width: 15px;
     height: 15px;
     background-color: #333;
+    border: black 2px solid;
     border-radius: 50%;
     top: 50%;
     left: 50%;
