@@ -29,13 +29,23 @@ numbers();
 
 function setClock() {
     const currentDate = new Date();
-    const secondsRatio = currentDate.getSeconds() / 60;
-    const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60;
-    const hoursRatio = (minutesRatio + currentDate.getHours()) / 12;
+    const isValidDate = currentDate instanceof Date && !isNaN(currentDate.getTime());
 
-    setRotation(secondHand, secondsRatio);
-    setRotation(minuteHand, minutesRatio);
-    setRotation(hourHand, hoursRatio);
+    const loader = document.getElementsByClassName("loader")[0];
+    const clock = document.getElementById("clock");
+
+    if (loader) loader.classList.toggle('hide', isValidDate);
+    if (clock) clock.classList.toggle('hide', !isValidDate);
+
+    if (isValidDate) {
+        const secondsRatio = currentDate.getSeconds() / 60;
+        const minutesRatio = (currentDate.getMinutes() + secondsRatio) / 60;
+        const hoursRatio = (currentDate.getHours() % 12 + minutesRatio) / 12;
+
+        setRotation(secondHand, secondsRatio);
+        setRotation(minuteHand, minutesRatio);
+        setRotation(hourHand, hoursRatio);
+    }
 }
 
 function setRotation(element, rotationRatio) {

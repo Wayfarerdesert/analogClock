@@ -7,28 +7,43 @@
     <title>Clock</title>
   </head>
   <body>
-    <div class="clock">
-      <div class="hand hour" data-hour-hand></div>
-      <div class="hand minute" data-minute-hand></div>
-      <div class="hand second" data-second-hand></div>
-      <div class="numberWrapper"></div>
-    </div>
+    <l-ring
+      size="40"
+      stroke="5"
+      bg-opacity="0"
+      speed="2"
+      color="mediumslateblue"
+      class="loader"
+    ></l-ring>
 
-    <div class="background">
-      <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+    <div class="clockWrapper">
+      <div id="clock" class="clock">
+        <div class="hand hour" data-hour-hand></div>
+        <div class="hand minute" data-minute-hand></div>
+        <div class="hand second" data-second-hand></div>
+        <div class="numberWrapper"></div>
+      </div>
+
+      <div class="background">
+        <ul class="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
     </div>
 
     <script defer src="./src/script.js"></script>
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/ring.js"
+    ></script>
   </body>
 </html>
